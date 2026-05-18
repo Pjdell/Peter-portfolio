@@ -227,3 +227,44 @@
   position: relative;
   z-index: 2;
 }
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 6%;
+    gap: 30px;
+    min-height: 70vh;
+    align-items: center;
+  }
+
+  .hero-left {
+    text-align: center;
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+  }
+
+  .image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .stars-container {
+    display: none; /* reduce visual clutter on smaller screens */
+  }
+}

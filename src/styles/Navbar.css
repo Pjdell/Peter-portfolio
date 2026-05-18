@@ -35,3 +35,64 @@
 .nav-links a:hover {
     color: #3b82f6;
 }
+
+/* HAMBURGER (mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 6%;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1100;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        right: 6%;
+        background: rgba(15, 31, 45, 0.96);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px 18px;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 1.05rem;
+    }
+}
