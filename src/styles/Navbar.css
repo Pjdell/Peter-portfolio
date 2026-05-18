@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    color: white;
+    z-index: 1000;
+        backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(15, 31, 45, 0.676);
+    border-radius: 12px;
+    border: 1px solid rgba(1, 12, 28, 0.3);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+     font-family: Cinzel, serif;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.nav-links a:hover {
+    color: #3b82f6;
+}

@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+
+:root {
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --color-title: #F5E7D4;
+  --color-body: #d1d5db;
+  --color-accent: #E3B778;
+}
+
+.about-me-intro {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 4rem 2rem;
+
+  background: linear-gradient(135deg, #071328 0%, #0b1f3a 55%, #102a43 100%);
+
+  background-size: 200% 200%;
+
+  animation: aboutBackgroundShift 18s ease-in-out infinite;
+
+  color: rgb(8, 39, 58);
+}
+
+.about-me-intro::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top left, rgba(1, 8, 18, 0.909), transparent 80%),
+    radial-gradient(circle at bottom right, rgba(121, 169, 247, 0.505), transparent 40%);
+
+  pointer-events: none;
+}
+
+/* MAIN CONTAINER */
+
+.moonwalk-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  height: 300px;
+}
+
+/* MJ FIGURE */
+
+.mj-figure {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 45%;
+  max-width: 700px;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+}
+
+.mj-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
+  filter: brightness(1.2) contrast(1.1) drop-shadow(0 0 20px rgba(255,255,255,0.2));
+  display: block;
+}
+
+/* TEXT BOX */
+
+.intro-text-box {
+  position: absolute;
+
+  left: 46%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  max-width: 48%;
+
+  padding-left: 2rem;
+
+  opacity: 0;
+
+  z-index: 2;
+
+}
+/* MJ animation trigger */
+
+.animate-mj {
+  animation: moonwalkSlide 5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* TEXT animation trigger */
+
+.animate-text {
+  animation: textFadeIn 3s ease-out 1.5s forwards;
+}
+
+/* TYPOGRAPHY */
+
+.intro-heading {
+  font-family: var(--font-title);
+  font-weight: 700;
+
+  color: var(--color-title);
+
+  font-size: 2.4rem;
+  line-height: 1.05;
+
+  letter-spacing: 0.02em;
+
+  margin-bottom: 0.8rem;
+
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+.intro-lead {
+  font-family: var(--font-body);
+  color: var(--color-accent);
+
+  font-size: 1.15rem;
+
+  margin-bottom: 0.9rem;
+
+  font-weight: 600;
+}
+
+.intro-bio {
+  font-family: var(--font-body);
+  color: var(--color-body);
+
+  line-height: 1.75;
+
+  font-size: 1rem;
+}
+
+/* MOONWALK ANIMATION */
+
+@keyframes moonwalkSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* TEXT FADE */
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@keyframes aboutBackgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .moonwalk-container {
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mj-figure {
+    position: relative;
+
+    right: auto;
+
+    animation: none;
+
+    margin-bottom: 2rem;
+  }
+
+  .intro-text-box {
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    opacity: 1;
+
+    animation: none;
+
+    text-align: center;
+  }
+
+  .mj-gif {
+    width: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-me-intro {
+    animation: none;
+  }
+}
