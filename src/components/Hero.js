@@ -50,7 +50,7 @@ function Hero() {
           <div className="wave wave3"></div>
 
           <img
-            src="/formalPic.jpg"
+            src={`${process.env.PUBLIC_URL}/formalPic.jpg`}
             alt="Profile"
             className="hero-image"
           />

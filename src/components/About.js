@@ -59,7 +59,7 @@ function About() {
         <div className={`mj-figure ${animate ? 'animate-mj' : ''}`}>
 
           <video
-            src="./0517.mp4"
+            src={`${process.env.PUBLIC_URL}/0517.mp4`}
             alt="pj-typing"
             className="mj-gif"
             autoPlay
