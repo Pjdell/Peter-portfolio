@@ -81,7 +81,7 @@ function About() {
           </p>
 
           <p className="intro-bio">
-            I'm a passionate web developer with a love for creating websites that are not onlt visually appealing
+            I'm a passionate web developer with a love for creating websites that are not only visually appealing
             but also beneficial for the community. I have a background in developing websites using HTML,CSS, ReactJS, PHP, MySQL, and PosgreSQL. I am always eager to learn new technologies and improve my skills to create better web experiences.
           </p>
 
