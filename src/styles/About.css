@@ -228,6 +228,11 @@
 
     animation: none;
 
+    text-align: justify;
+  }
+
+  .intro-heading,
+  .intro-lead {
     text-align: center;
   }
 
