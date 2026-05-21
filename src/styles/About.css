@@ -224,6 +224,10 @@
 
     transform: none;
 
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+
     opacity: 1;
 
     animation: none;
