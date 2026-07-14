@@ -1,0 +1,285 @@
+.skills-socials-section {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111620 0%, #0d111a 100%);
+  color: #EDF2F7;
+  padding: 100px 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Common Section Typography */
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  color: #D4AF37;
+  font-family: var(--font-title, 'Playfair Display'), serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  font-family: var(--font-body, 'Source Sans 3'), sans-serif;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* SKILLS DIVISION */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.category-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px 24px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.category-title {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-family: var(--font-title, 'Playfair Display'), serif;
+  font-weight: 600;
+  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+  padding-bottom: 10px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: scale(1.03);
+}
+
+.icon-wrapper {
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .icon-wrapper {
+  color: #D4AF37;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-family: var(--font-body, 'Source Sans 3'), sans-serif;
+  color: #e2e8f0;
+}
+
+/* CONNECT DIVISION */
+.social-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.social-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-card-inner {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.social-card-inner h3 {
+  font-size: 1.25rem;
+  font-family: var(--font-title, 'Playfair Display'), serif;
+  margin-bottom: 10px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-card-inner p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  font-family: var(--font-body, 'Source Sans 3'), sans-serif;
+}
+
+/* Hover effects for social cards dynamically colored */
+.social-card-link:hover .social-card-inner {
+  transform: translateY(-8px);
+  border-color: var(--hover-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.social-card-link:hover .social-icon-box {
+  background: var(--hover-color);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 20px var(--hover-color);
+}
+
+.social-card-link:hover h3 {
+  color: var(--hover-color);
+}
+
+/* RESUME BUTTON */
+.resume-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: linear-gradient(90deg, #D4AF37, #E3B778);
+  color: #071328;
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: var(--font-body, 'Source Sans 3'), sans-serif;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.resume-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(90deg, #E3B778, #D4AF37);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .skills-socials-section {
+    padding: 80px 6%;
+  }
+  
+  .section-container {
+    gap: 60px;
+  }
+  
+  .section-title {
+    font-size: 2.1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .social-card-inner {
+    padding: 24px 20px;
+  }
+
+  .resume-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+}
