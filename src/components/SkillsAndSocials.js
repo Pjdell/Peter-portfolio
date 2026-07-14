@@ -118,7 +118,7 @@ function SkillsAndSocials() {
     },
     {
       name: "LinkedIn",
-      url: "www.linkedin.com/in/peter-joshua-deloria-a3556a36b",
+      url: "https://www.linkedin.com/in/peter-joshua-deloria-a3556a36b",
       description: "Connect with me professionally and check my career updates.",
       color: "#0077b5",
       icon: (
@@ -197,7 +197,7 @@ function SkillsAndSocials() {
 
           <div className="resume-container">
             {/* Note: You can replace this href value with the path of your resume, e.g. "/resume.pdf" inside the public folder */}
-            <a href="/DeloriaResume.pdf" className="resume-btn">
+            <a href={`${process.env.PUBLIC_URL}/DeloriaResume.pdf`} target="_blank" rel="noopener noreferrer" className="resume-btn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="btn-icon">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="7 10 12 15 17 10" />
