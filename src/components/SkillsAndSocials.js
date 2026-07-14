@@ -118,7 +118,7 @@ function SkillsAndSocials() {
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/peter-deloria",
+      url: "www.linkedin.com/in/peter-joshua-deloria-a3556a36b",
       description: "Connect with me professionally and check my career updates.",
       color: "#0077b5",
       icon: (
