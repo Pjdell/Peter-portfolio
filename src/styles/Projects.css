@@ -57,7 +57,7 @@
   scrollbar-width: thin;
 
   padding: 0 2vw 2rem;
-  
+
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
@@ -101,12 +101,10 @@
 /* MASK EFFECT */
 
 .carousel[mask] {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10% 90%,
-    transparent
-  );
+  mask-image: linear-gradient(to right,
+      transparent,
+      black 10% 90%,
+      transparent);
 }
 
 /* CARDS */
@@ -133,11 +131,11 @@
 
   overflow: hidden;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 
   backdrop-filter: blur(10px);
 
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   color: white;
   transition: 0.4s ease;
@@ -151,7 +149,7 @@
   border-color: #D4AF37;
 
   box-shadow:
-    0 10px 40px rgba(212,175,55,0.2);
+    0 10px 40px rgba(212, 175, 55, 0.2);
 }
 
 /* IMAGE */
@@ -240,17 +238,29 @@
 @media (max-width: 768px) {
   .carousel {
     width: 100%;
-    padding: 0 1rem 1rem;
+    padding: 0 1rem 1.5rem;
+    scrollbar-color: #ffffff rgba(0, 0, 0, 0.2);
   }
 
   .carousel-track {
     gap: 1rem;
-    animation-duration: 24s;
   }
 
   .carousel article {
     width: 280px;
     flex-basis: 280px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb {
+    background: #ffffff;
+  }
+
+  .carousel::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+
+  .carousel::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
   }
 }
 
@@ -364,6 +374,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -374,6 +385,7 @@
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -385,12 +397,15 @@
   .image-popup-info {
     padding: 16px;
   }
+
   .image-popup-title {
     font-size: 1.15rem;
   }
+
   .image-popup-desc {
     font-size: 0.88rem;
   }
+
   .image-popup-close {
     top: 10px;
     right: 15px;
