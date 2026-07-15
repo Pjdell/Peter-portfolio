@@ -52,11 +52,20 @@
 
   height: auto;
 
-  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-color: rgba(212, 175, 55, 0.4) rgba(255, 255, 255, 0.03);
+  scrollbar-width: thin;
 
-  padding: 0 2vw 1rem;
+  padding: 0 2vw 2rem;
+  
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  scroll-behavior: auto;
+}
 
-  scrollbar-width: none;
+.carousel:active {
+  cursor: grabbing;
 }
 
 .carousel-track {
@@ -65,16 +74,28 @@
   gap: var(--carousel-item-gap);
 
   width: max-content;
-
-  animation: marquee 32s linear infinite;
-}
-
-.carousel:hover .carousel-track {
-  animation-play-state: paused;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none;
+  height: 8px;
+  display: block;
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  margin: 0 2vw;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.8);
 }
 
 /* MASK EFFECT */
@@ -233,15 +254,7 @@
   }
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
 
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 /* CLICKABLE IMAGE */
 .project-image-clickable {
