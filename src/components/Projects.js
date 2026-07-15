@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import '../styles/Projects.css';
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const asset = (path) => `${process.env.PUBLIC_URL}${path}`;
 
@@ -66,6 +68,8 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
+                onClick={() => setSelectedProject(project)}
+                className="project-image-clickable"
               />
 
               <h2>{project.title}</h2>
@@ -82,6 +86,27 @@ function Projects() {
         </div>
 
       </div>
+
+      {selectedProject && (
+        <div className="image-popup-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="image-popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-popup-close" onClick={() => setSelectedProject(null)}>
+              &times;
+            </button>
+            <div className="image-popup-img-wrapper">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="image-popup-img"
+              />
+            </div>
+            <div className="image-popup-info">
+              <h3 className="image-popup-title">{selectedProject.title}</h3>
+              <p className="image-popup-desc">{selectedProject.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
     </section>
   );
