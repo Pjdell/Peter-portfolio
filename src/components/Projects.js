@@ -8,7 +8,7 @@ function Projects() {
   const startXRef = useRef(0);
   const scrollLeftStartRef = useRef(0);
   const draggedRef = useRef(false);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const asset = (path) => `${process.env.PUBLIC_URL}${path}`;
 
@@ -67,7 +67,8 @@ function Projects() {
     const speed = 0.6; // Scroll speed (pixels per frame)
 
     const step = () => {
-      if (!isPaused) {
+      // Only auto-scroll if not actively dragging
+      if (!isDraggingRef.current) {
         carousel.scrollLeft += speed;
       }
       animationFrameId = requestAnimationFrame(step);
@@ -78,15 +79,15 @@ function Projects() {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isPaused]);
+  }, []);
 
   const handleMouseDown = (e) => {
     if (!carouselRef.current) return;
     isDraggingRef.current = true;
+    setIsDragging(true);
     draggedRef.current = false;
     startXRef.current = e.pageX - carouselRef.current.offsetLeft;
     scrollLeftStartRef.current = carouselRef.current.scrollLeft;
-    setIsPaused(true);
   };
 
   const handleMouseMove = (e) => {
@@ -105,16 +106,18 @@ function Projects() {
   const handleMouseUpOrLeave = () => {
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
-      setIsPaused(false);
+      setIsDragging(false);
     }
   };
 
   const handleTouchStart = () => {
-    setIsPaused(true);
+    isDraggingRef.current = true;
+    setIsDragging(true);
   };
 
   const handleTouchEnd = () => {
-    setIsPaused(false);
+    isDraggingRef.current = false;
+    setIsDragging(false);
   };
 
   const handleScroll = () => {
@@ -152,14 +155,13 @@ function Projects() {
 
       <div
         ref={carouselRef}
-        className="carousel"
+        className={`carousel ${isDragging ? 'dragging' : ''}`}
         mask="true"
         style={{ "--items": projects.length }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
-        onMouseEnter={() => setIsPaused(true)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onScroll={handleScroll}

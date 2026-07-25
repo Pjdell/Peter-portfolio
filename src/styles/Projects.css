@@ -64,7 +64,8 @@
   scroll-behavior: auto;
 }
 
-.carousel:active {
+.carousel:active,
+.carousel.dragging {
   cursor: grabbing;
 }
 
