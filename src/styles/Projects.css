@@ -25,7 +25,7 @@
 
   color: #D4AF37;
 
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-title, 'Syne'), sans-serif;
 
   letter-spacing: 4px;
 }
@@ -150,7 +150,7 @@
   border-color: #D4AF37;
 
   box-shadow:
-    0 10px 40px rgba(212, 175, 55, 0.2);
+    0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 /* IMAGE */
@@ -356,7 +356,7 @@
 }
 
 .image-popup-title {
-  font-family: 'Cinzel', serif;
+  font-family: var(--font-title, 'Syne'), sans-serif;
   font-size: 1.4rem;
   color: #D4AF37;
   margin: 0 0 10px 0;
