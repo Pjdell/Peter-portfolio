@@ -1,6 +1,101 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import '../styles/Projects.css';
 
+/* ─── Reusable Image Slideshow ─── */
+function ImageSlideshow({ images, alt, variant = 'card', onImageClick }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(null);
+
+  const count = images.length;
+
+  const goPrev = useCallback((e) => {
+    if (e) { e.stopPropagation(); e.preventDefault(); }
+    setCurrentIndex((prev) => (prev - 1 + count) % count);
+  }, [count]);
+
+  const goNext = useCallback((e) => {
+    if (e) { e.stopPropagation(); e.preventDefault(); }
+    setCurrentIndex((prev) => (prev + 1) % count);
+  }, [count]);
+
+  // Keyboard navigation when popup variant
+  useEffect(() => {
+    if (variant !== 'popup') return;
+    const handleKey = (e) => {
+      if (e.key === 'ArrowLeft') goPrev();
+      if (e.key === 'ArrowRight') goNext();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [variant, goPrev, goNext]);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? goNext() : goPrev();
+    }
+    touchStartX.current = null;
+  };
+
+  const isCard = variant === 'card';
+
+  return (
+    <div
+      className={`slideshow slideshow--${variant}`}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className="slideshow__viewport">
+        {images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`${alt} – ${i + 1}`}
+            className={`slideshow__img ${i === currentIndex ? 'slideshow__img--active' : ''} ${isCard ? 'project-image-clickable' : 'image-popup-img'}`}
+            onClick={isCard && onImageClick ? (e) => { e.stopPropagation(); onImageClick(); } : undefined}
+            draggable={false}
+          />
+        ))}
+      </div>
+
+      {count > 1 && (
+        <>
+          <button
+            className="slideshow__arrow slideshow__arrow--prev"
+            onClick={goPrev}
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+          <button
+            className="slideshow__arrow slideshow__arrow--next"
+            onClick={goNext}
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+          <div className="slideshow__dots">
+            {images.map((_, i) => (
+              <span
+                key={i}
+                className={`slideshow__dot ${i === currentIndex ? 'slideshow__dot--active' : ''}`}
+                onClick={(e) => { e.stopPropagation(); setCurrentIndex(i); }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ─── Projects Section ─── */
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const carouselRef = useRef(null);
@@ -15,29 +110,39 @@ function Projects() {
   const projects = [
     {
       title: "School Management System for International Academy Manila",
-      image: asset('/IAM.png'),
+      images: [
+        asset('/iamport1.jpg'),
+        asset('/iamport2.jpg'),
+        asset('/iamport3.jpg'),
+      ],
       description: "Enhanced usability and accessibility of the portal, improving the experience for students and staff across devices while maintaining  quality and design consistency."
     },
     {
-      title: "Multi-Criteria Decision Support System",
-      image: asset('/inprogress.jpg'),
-      description: "Designed to assist higher education institutions in faculty hiring and teaching load allocation. "
+      title: "Work-Allocation Optimizer",
+      images: [
+        asset('/inprogress.jpg'),
+      ],
+      description: "Designed to help organizations efficiently assign employees to projects based on skills, availability, workload, and project requirements. "
     },
     {
       title: "TUA Marketplace",
-      image: asset('/tua.jpg'),
+      images: [
+        asset('/tua.jpg'),
+        asset('/tuamar2.jpg'),
+        asset('/tuamar3.jpg'),
+      ],
       description: "Collaborated in a team to develop a campus marketplace using React.js, PHP, and MySQL,featuring AI-based product recommendations and buyer-seller messaging."
     },
     {
       title: "Pasig Garbage Tracking System",
-      image: asset('/garbage.jpg'),
+      images: [
+        asset('/garbage1.jpg'),
+        asset('/garbage2.jpg'),
+        asset('/garbage3.jpg'),
+      ],
       description: " Enabled users to track garbage trucks within their location (Pasig City), improving community waste management efficiency."
     },
-    {
-      title: "Pasig Garbage Tracking System (Map Integration)",
-      image: asset('/map.jpg'),
-      description: "Integrated OpenStreetMap API and React Leaflet for real-time location tracking."
-    },
+
   ];
 
   const loopedProjects = [...projects, ...projects];
@@ -95,11 +200,11 @@ function Projects() {
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
     const walk = (x - startXRef.current) * 1.5;
-    
+
     if (Math.abs(walk) > 5) {
       draggedRef.current = true;
     }
-    
+
     carouselRef.current.scrollLeft = scrollLeftStartRef.current - walk;
   };
 
@@ -170,11 +275,11 @@ function Projects() {
         <div className="carousel-track">
           {loopedProjects.map((project, index) => (
             <article key={`${project.title}-${index}`}>
-              <img
-                src={project.image}
+              <ImageSlideshow
+                images={project.images}
                 alt={project.title}
-                onClick={() => setSelectedProject(project)}
-                className="project-image-clickable"
+                variant="card"
+                onImageClick={() => setSelectedProject(project)}
               />
               <h2>{project.title}</h2>
               <div>
@@ -192,10 +297,10 @@ function Projects() {
               &times;
             </button>
             <div className="image-popup-img-wrapper">
-              <img
-                src={selectedProject.image}
+              <ImageSlideshow
+                images={selectedProject.images}
                 alt={selectedProject.title}
-                className="image-popup-img"
+                variant="popup"
               />
             </div>
             <div className="image-popup-info">
