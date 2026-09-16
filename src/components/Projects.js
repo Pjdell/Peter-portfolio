@@ -120,7 +120,7 @@ function Projects() {
     {
       title: "Work-Allocation Optimizer",
       images: [
-        asset('/inprogress.jpg'),
+        asset('/workopt.jpg'),
       ],
       description: "Designed to help organizations efficiently assign employees to projects based on skills, availability, workload, and project requirements. "
     },
