@@ -5,7 +5,7 @@ const ABOUT_PAGES = [
   {
     id: 'education',
     title: 'Education',
-    subtitle: 'My Academic Journey',
+    subtitle: 'WHERE I STARTED',
     details: [
       {
         title: 'Trinity University of Asia',
@@ -15,6 +15,7 @@ const ABOUT_PAGES = [
       },
       {
         title: 'Academic Focus & Achievements',
+        meta: 'Magna Cum Laude | Dean\'s Lister · Pasig City Scholar',
         description: 'Excelled in full-stack project development. Developed a robust Software Engineering capstone, and established a strong foundation in modern frontend/backend practices.'
       }
     ],
@@ -168,14 +169,14 @@ function About() {
   return (
     <section id="about" className="about-me-intro" ref={aboutRef}>
       <div className="about-content-container">
-        
+
         {/* HEADER AREA */}
         <div className={`about-top-bar ${animate ? 'animate-top-bar' : ''}`}>
           <h2 className="about-title-slider">About Me</h2>
-          
+
           {/* CUSTOM DROPDOWN */}
           <div className="about-dropdown-container" ref={dropdownRef}>
-            <button 
+            <button
               className={`about-dropdown-btn ${dropdownOpen ? 'active' : ''}`}
               onClick={() => setDropdownOpen(!dropdownOpen)}
               aria-haspopup="listbox"
@@ -205,19 +206,19 @@ function About() {
         {/* SLIDER CAROUSEL SECTION */}
         <div className="about-slider-wrapper">
           {/* SIDE NAVIGATION ARROWS */}
-          <button 
-            className="about-nav-arrow prev" 
-            onClick={handlePrevPage} 
+          <button
+            className="about-nav-arrow prev"
+            onClick={handlePrevPage}
             aria-label="Previous Page"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
-          
-          <button 
-            className="about-nav-arrow next" 
-            onClick={handleNextPage} 
+
+          <button
+            className="about-nav-arrow next"
+            onClick={handleNextPage}
             aria-label="Next Page"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -227,7 +228,7 @@ function About() {
 
           {/* VIEWPORT CONTROLLER */}
           <div className="about-slider-viewport">
-            <div 
+            <div
               className="about-slides-track"
               style={{ transform: `translateX(-${activeTabIdx * (100 / ABOUT_PAGES.length)}%)` }}
             >
@@ -236,15 +237,15 @@ function About() {
                 const activeImgIdx = imgIndices[pageIdx];
 
                 return (
-                  <div 
-                    key={page.id} 
+                  <div
+                    key={page.id}
                     className={`about-page-slide ${isActive ? 'active' : 'inactive'}`}
                   >
                     {/* DETAILS - LEFT COLUMN */}
                     <div className="about-details-col">
                       <span className="about-slide-subtitle">{page.subtitle}</span>
                       <h3 className="about-slide-title">{page.title}</h3>
-                      
+
                       <div className="about-details-list">
                         {page.details.map((detail, dIdx) => (
                           <div key={dIdx} className="detail-card">
@@ -294,22 +295,22 @@ function About() {
 
       {/* IMAGE MODAL OVERLAY */}
       {selectedImage && (
-        <div 
-          className="about-modal-overlay" 
+        <div
+          className="about-modal-overlay"
           onClick={() => setSelectedImage(null)}
           role="dialog"
           aria-modal="true"
         >
-          <button 
-            className="about-modal-close" 
+          <button
+            className="about-modal-close"
             onClick={() => setSelectedImage(null)}
             aria-label="Close modal"
           >
             &times;
           </button>
-          <img 
-            src={selectedImage} 
-            alt="Enlarged view" 
+          <img
+            src={selectedImage}
+            alt="Enlarged view"
             className="about-modal-img"
             onClick={(e) => e.stopPropagation()}
           />

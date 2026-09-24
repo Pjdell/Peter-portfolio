@@ -20,7 +20,8 @@
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-     font-family: var(--font-title, 'Syne'), sans-serif;
+    font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+    letter-spacing: -0.5px;
 }
 .nav-links {
     display: flex;
@@ -30,6 +31,8 @@
     color: white;
     text-decoration: none;
     font-size: 1rem;
+    font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
+    font-weight: 500;
 }
 .nav-links a:hover {
     color: #3b82f6;

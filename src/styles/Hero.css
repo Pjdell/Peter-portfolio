@@ -59,22 +59,22 @@
 
 /* SUBTITLE & TITLES */
 .hero-subtitle {
-  font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 1rem;
   color: #cbd5e1;
   margin-bottom: 0.8rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .hero-typing-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-weight: 700;
   font-size: 3.8rem;
   color: #ffffff;
   margin-bottom: 1.5rem;
   line-height: 1.2;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .typewriter-text {
@@ -89,7 +89,7 @@
 }
 
 .hero-description {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body, 'IBM Plex Sans'), sans-serif;
   font-size: 1.05rem;
   color: #cbd5e1;
   line-height: 1.7;
@@ -104,6 +104,7 @@
 }
 
 .hero-btn-primary {
+  font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
   padding: 14px 34px;
   background: rgb(0, 132, 209);
   color: #ffffff;
@@ -126,6 +127,7 @@
 }
 
 .hero-btn-secondary {
+  font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
   padding: 14px 34px;
   background: #ffffff;
   color: #071328;

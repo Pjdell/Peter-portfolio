@@ -1,8 +1,8 @@
 .skills-socials-section {
   min-height: 100vh;
-  background: linear-gradient(180deg, #111620 0%, #0d111a 100%);
+  background: #071328;
   color: #EDF2F7;
-  padding: 100px 8%;
+  padding: 120px 8% 140px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,212 +15,369 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 100px;
+  position: relative;
+  z-index: 2;
 }
 
-/* Common Section Typography */
-.section-title {
-  font-size: 2.6rem;
-  margin-bottom: 12px;
-  color: #D4AF37;
-  font-family: var(--font-title, 'Syne'), sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-align: center;
-}
+/* ──────────────────────────────────────────────
+   TOOLBOX DIVISION (EDITORIAL TYPOGRAPHY)
+────────────────────────────────────────────── */
 
-.section-subtitle {
-  font-size: 1.1rem;
-  color: #cbd5e1;
-  font-family: var(--font-body, 'Plus Jakarta Sans'), sans-serif;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  line-height: 1.6;
-}
-
-/* SKILLS DIVISION */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.category-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 30px 24px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.category-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-}
-
-.category-title {
-  font-size: 1.4rem;
-  color: #ffffff;
-  margin-bottom: 24px;
-  font-family: var(--font-title, 'Syne'), sans-serif;
-  font-weight: 600;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
-  padding-bottom: 10px;
-}
-
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.skill-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 10px;
-  transition: all 0.25s ease;
-}
-
-.skill-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(212, 175, 55, 0.3);
-  transform: scale(1.03);
-}
-
-.icon-wrapper {
-  color: #3b82f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.skill-item:hover .icon-wrapper {
-  color: #D4AF37;
-}
-
-.skill-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.skill-name {
-  font-size: 0.95rem;
-  font-family: var(--font-body, 'Plus Jakarta Sans'), sans-serif;
-  color: #e2e8f0;
-}
-
-/* CONNECT DIVISION */
-.social-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-.social-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.social-card-inner {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 30px 24px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  height: 100%;
+.toolbox-division {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.social-icon-box {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+.toolbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.toolbox-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbox-eyebrow {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.85rem;
+  color: #D4AF37;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+  font-weight: 500;
+}
+
+.toolbox-title {
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* CURRENTLY USING STATUS STRIP (MONOSPACE) */
+.toolbox-status-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 10px 18px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 6px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator {
+  position: relative;
+  width: 8px;
+  height: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
-  color: #cbd5e1;
-  transition: all 0.3s ease;
 }
 
-.social-icon {
-  width: 28px;
-  height: 28px;
+
+.status-ping {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-.social-card-inner h3 {
-  font-size: 1.25rem;
-  font-family: var(--font-title, 'Syne'), sans-serif;
-  margin-bottom: 10px;
+@keyframes radarPing {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.status-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.status-label {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #D4AF37;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.status-stack {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.85rem;
+  color: #f1f5f9;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* TYPOGRAPHIC COLUMNS */
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 2.5rem;
+}
+
+.toolbox-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbox-col-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toolbox-num {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.95rem;
+  color: #D4AF37;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.toolbox-category {
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
   color: #ffffff;
-  transition: color 0.3s ease;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.social-card-inner p {
-  font-size: 0.9rem;
+.toolbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.toolbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body, 'IBM Plex Sans'), sans-serif;
+  font-size: 1.15rem;
   color: #94a3b8;
-  line-height: 1.5;
-  font-family: var(--font-body, 'Plus Jakarta Sans'), sans-serif;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+  cursor: default;
 }
 
-/* Hover effects for social cards dynamically colored */
-.social-card-link:hover .social-card-inner {
-  transform: translateY(-8px);
-  border-color: var(--hover-color);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+.toolbox-bullet {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  color: rgba(212, 175, 55, 0.35);
+  font-size: 0.85rem;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-.social-card-link:hover .social-icon-box {
-  background: var(--hover-color);
+.toolbox-name {
+  color: #cbd5e1;
+  transition: color 0.25s ease;
+}
+
+.toolbox-item:hover {
+  transform: translateX(6px);
+}
+
+.toolbox-item:hover .toolbox-bullet {
+  color: #D4AF37;
+  transform: translateX(2px);
+}
+
+.toolbox-item:hover .toolbox-name {
   color: #ffffff;
-  border-color: transparent;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: none;
+  font-weight: 500;
 }
 
-.social-card-link:hover h3 {
-  color: var(--hover-color);
+/* ──────────────────────────────────────────────
+   CONNECT DIVISION (EDITORIAL DIRECT CHANNELS)
+────────────────────────────────────────────── */
+
+.connect-division {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-header {
+  margin-bottom: 2.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-title {
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #D4AF37;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.connect-editorial-grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 3.5rem;
+}
+
+.connect-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.connect-row:hover {
+  padding-left: 1.2rem;
+  padding-right: 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom-color: rgba(212, 175, 55, 0.4);
+}
+
+.connect-row-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.connect-icon {
+  width: 22px;
+  height: 22px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.connect-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.connect-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+}
+
+.connect-name {
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  transition: color 0.25s ease;
+}
+
+.connect-handle {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.9rem;
+  color: #64748b;
+  transition: color 0.25s ease;
+}
+
+.connect-row-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.connect-label {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.85rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.connect-arrow {
+  font-size: 1.35rem;
+  color: #94a3b8;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+  line-height: 1;
+}
+
+.connect-row:hover .connect-icon {
+  color: #D4AF37;
+  transform: scale(1.1);
+}
+
+.connect-row:hover .connect-name {
+  color: #ffffff;
+}
+
+.connect-row:hover .connect-handle {
+  color: #D4AF37;
+}
+
+.connect-row:hover .connect-arrow {
+  color: #D4AF37;
+  transform: translate(4px, -4px);
 }
 
 /* RESUME BUTTON */
 .resume-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .resume-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 36px;
+  padding: 16px 42px;
   background: linear-gradient(90deg, #D4AF37, #E3B778);
   color: #071328;
   font-weight: 700;
   font-size: 1.05rem;
-  font-family: var(--font-body, 'Plus Jakarta Sans'), sans-serif;
+  font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
   text-decoration: none;
   border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+  letter-spacing: 0.5px;
 }
 
 .btn-icon {
@@ -229,57 +386,79 @@
 }
 
 .resume-btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
   background: linear-gradient(90deg, #E3B778, #D4AF37);
 }
 
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
+/* ──────────────────────────────────────────────
+   RESPONSIVENESS
+────────────────────────────────────────────── */
+
+@media (max-width: 992px) {
+  .toolbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.75rem;
+  }
+
+  .toolbox-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 650px) {
   .skills-socials-section {
-    padding: 80px 6%;
+    padding: 90px 6% 110px;
   }
-  
+
   .section-container {
-    gap: 60px;
+    gap: 75px;
   }
-  
-  .section-title {
+
+  .toolbox-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .toolbox-title {
+    font-size: 2.4rem;
+  }
+
+  .toolbox-status-strip {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .toolbox-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .connect-title {
     font-size: 2.1rem;
   }
 
-  .section-subtitle {
-    font-size: 1rem;
-    margin-bottom: 30px;
+  .connect-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem 0.5rem;
   }
 
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .connect-meta {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .social-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .social-card-inner {
-    padding: 24px 20px;
+  .connect-row-right {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .resume-btn {
     width: 100%;
     justify-content: center;
     padding: 14px 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: 1fr;
   }
 }
