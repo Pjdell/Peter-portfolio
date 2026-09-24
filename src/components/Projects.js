@@ -103,7 +103,7 @@ function Projects() {
 
   const projects = [
     {
-      num: "01",
+
       client: "INTERNATIONAL ACADEMY MANILA",
       title: "School Management Portal",
       subtitle: "A school portal connecting students, faculty, and administrators.",
@@ -121,7 +121,7 @@ function Projects() {
       ],
     },
     {
-      num: "02",
+
       client: "PERSONAL PROJECT",
       title: "Workforce Allocation Optimizer",
       subtitle: "A tool for matching employees with projects based on skills, availability, workload, and project requirements.",
@@ -137,7 +137,7 @@ function Projects() {
       ],
     },
     {
-      num: "03",
+
       client: "CAPSTONE PROJECT",
       title: "TUA Marketplace",
       subtitle: "A campus marketplace designed around a search problem and security",
@@ -155,7 +155,7 @@ function Projects() {
       ],
     },
     {
-      num: "04",
+
       client: "PERSONAL PROJECT",
       title: "Pasig Garbage Tracking System",
       subtitle: "A real-time tracking system for waste collection in Pasig City.",
@@ -175,11 +175,11 @@ function Projects() {
   ];
 
   const processSteps = [
-    { num: "01", title: "UNDERSTAND", desc: "What problem are we actually solving?" },
-    { num: "02", title: "DESIGN", desc: "Turn requirements into a usable interface." },
-    { num: "03", title: "BUILD", desc: "React frontend + backend + database." },
-    { num: "04", title: "TEST", desc: "Use the application and find what breaks." },
-    { num: "05", title: "REFINE", desc: "Debug, improve, and review the implementation." },
+    { num: "1", title: "UNDERSTAND", desc: "What problem are we actually solving?" },
+    { num: "2", title: "DESIGN", desc: "Turn requirements into a usable interface." },
+    { num: "3", title: "BUILD", desc: "React frontend + backend + database." },
+    { num: "4", title: "TEST", desc: "Use the application and find what breaks." },
+    { num: "5", title: "REFINE", desc: "Debug, improve, and review the implementation." },
   ];
 
   const currentlyItems = [
