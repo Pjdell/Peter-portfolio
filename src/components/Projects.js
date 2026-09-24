@@ -264,7 +264,6 @@ function Projects() {
       {/* ─── HOW I BUILD ─── */}
       <div className="process-section">
         <div className="process-header">
-          <span className="projects-eyebrow">{"// MY DEVELOPMENT APPROACH"}</span>
           <h2 className="process-title">HOW I BUILD</h2>
           <p className="process-note">
             I use AI tools as development assistants when appropriate, but I review the generated code, test the application, and make sure I understand the implementation before accepting it.
@@ -292,7 +291,7 @@ function Projects() {
       {/* ─── CURRENTLY ─── */}
       <div className="currently-section">
         <div className="currently-header">
-          <span className="projects-eyebrow">{"// WHERE I AM NOW"}</span>
+
           <h2 className="currently-title">CURRENTLY</h2>
         </div>
 
