@@ -4,22 +4,22 @@ import '../styles/SkillsAndSocials.css';
 function SkillsAndSocials() {
   const toolboxCategories = [
     {
-      num: "01",
+      num: "1",
       name: "FRONTEND",
       skills: ["React", "JavaScript", "HTML", "CSS", "Tailwind"]
     },
     {
-      num: "02",
+      num: "2",
       name: "BACKEND",
       skills: ["PHP", "Laravel", "REST APIs"]
     },
     {
-      num: "03",
+      num: "3",
       name: "DATA",
       skills: ["PostgreSQL", "MySQL", "Firebase"]
     },
     {
-      num: "04",
+      num: "4",
       name: "TOOLS",
       skills: ["Git", "GitHub", "Figma", "WordPress"]
     }
