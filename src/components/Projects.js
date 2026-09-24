@@ -194,7 +194,7 @@ function Projects() {
 
       {/* ─── SECTION HEADER ─── */}
       <div className="projects-header">
-        <span className="projects-eyebrow">{"// THINGS I'VE BUILT"}</span>
+
         <h2 className="projects-title">SELECTED WORK</h2>
       </div>
 
