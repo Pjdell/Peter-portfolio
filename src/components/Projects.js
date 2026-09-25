@@ -138,8 +138,8 @@ function Projects() {
     },
     {
 
-      client: "CAPSTONE PROJECT",
       title: "TUA Marketplace",
+      client: "CAPSTONE PROJECT",
       subtitle: "A campus marketplace designed around a search problem and security",
       description: "I noticed that general marketplace searches don't always return the item a user actually has in mind. So our team explored a more focused campus marketplace experience with AI-based recommendations and real-time buyer-seller messaging.",
       role: "Frontend Developer",
@@ -207,10 +207,12 @@ function Projects() {
             <div className="case-text">
               <div className="case-header">
                 <span className="case-num">{project.num}</span>
-                <span className="case-client">{project.client}</span>
-              </div>
 
-              <h3 className="case-title">{project.title}</h3>
+              </div>
+              <div className="case-title-row">
+                <h3 className="case-title">{project.title}</h3>
+
+              </div>
               <p className="case-subtitle">{project.subtitle}</p>
               <p className="case-description">{project.description}</p>
 
@@ -227,6 +229,10 @@ function Projects() {
                 <div className="case-meta-item">
                   <span className="case-meta-label">FOCUS</span>
                   <span className="case-meta-value">{project.focus.join(' · ')}</span>
+                </div>
+                <div className="case-meta-item">
+                  <span className="case-meta-label">PROJECT TYPE</span>
+                  <span className="case-meta-value">{project.client}</span>
                 </div>
               </div>
 

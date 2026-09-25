@@ -71,7 +71,7 @@
   direction: rtl;
 }
 
-.project-case:nth-child(even) > * {
+.project-case:nth-child(even)>* {
   direction: ltr;
 }
 
@@ -102,7 +102,7 @@
   font-family: var(--font-label, 'IBM Plex Mono'), monospace;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #64748b;
+  color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -169,6 +169,26 @@
 }
 
 /* CASE STUDY BLOCK */
+.case-title-row .case-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+
+}
+
+.case-title-row .case-client {
+  margin-left: auto;
+}
+
+.case-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 
 .case-study-block {
   display: flex;
@@ -301,8 +321,13 @@
   border-color: #D4AF37;
 }
 
-.slideshow__arrow--prev { left: 10px; }
-.slideshow__arrow--next { right: 10px; }
+.slideshow__arrow--prev {
+  left: 10px;
+}
+
+.slideshow__arrow--next {
+  right: 10px;
+}
 
 /* Popup variant */
 .slideshow--popup .slideshow__arrow {
@@ -313,8 +338,13 @@
   background: rgba(0, 0, 0, 0.55);
 }
 
-.slideshow--popup .slideshow__arrow--prev { left: 14px; }
-.slideshow--popup .slideshow__arrow--next { right: 14px; }
+.slideshow--popup .slideshow__arrow--prev {
+  left: 14px;
+}
+
+.slideshow--popup .slideshow__arrow--next {
+  right: 14px;
+}
 
 /* Dots */
 .slideshow__dots {
@@ -345,8 +375,15 @@
   background: rgba(212, 175, 55, 0.7);
 }
 
-.slideshow--popup .slideshow__dots { bottom: 14px; gap: 8px; }
-.slideshow--popup .slideshow__dot { width: 9px; height: 9px; }
+.slideshow--popup .slideshow__dots {
+  bottom: 14px;
+  gap: 8px;
+}
+
+.slideshow--popup .slideshow__dot {
+  width: 9px;
+  height: 9px;
+}
 
 
 /* ══════════════════════════════════════════════
@@ -624,13 +661,25 @@
 ══════════════════════════════════════════════ */
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleUp {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 

@@ -5,7 +5,7 @@ const ABOUT_PAGES = [
   {
     id: 'education',
     title: 'Education',
-    subtitle: 'WHERE I STARTED',
+
     details: [
       {
         title: 'Trinity University of Asia',
@@ -30,7 +30,7 @@ const ABOUT_PAGES = [
   {
     id: 'experience',
     title: 'Work Experience',
-    subtitle: 'Professional Path',
+
     details: [
       {
         title: 'International Academy Manila',
@@ -54,7 +54,7 @@ const ABOUT_PAGES = [
   {
     id: 'events',
     title: 'Events & Certifications',
-    subtitle: 'Learning & Community',
+
     details: [
       {
         title: 'EgovPH Hackathon 2026',

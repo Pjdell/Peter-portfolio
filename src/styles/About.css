@@ -1,11 +1,11 @@
 :root {
-  --font-title: 'Space Grotesk', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-label: 'IBM Plex Mono', monospace;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-display: 'Montserrat', sans-serif;
+  --font-label: 'Marcellus', serif;
+  --font-mono: 'Marcellus', serif;
   --font-montserrat: 'IBM Plex Sans', sans-serif;
-  
+
   --color-bg-dark: #071328;
   --color-title: #F5E7D4;
   --color-body: #cbd5e1;
@@ -383,6 +383,7 @@
   0% {
     transform: scale(1.02) translate(0, 0);
   }
+
   100% {
     transform: scale(1.10) translate(-0.8%, -0.8%);
   }
@@ -495,6 +496,7 @@
     opacity: 0;
     transform: translateY(25px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -506,6 +508,7 @@
   .about-nav-arrow.prev {
     left: -20px;
   }
+
   .about-nav-arrow.next {
     right: -20px;
   }
@@ -515,25 +518,25 @@
   .about-me-intro {
     padding: 100px 5% 110px;
   }
-  
+
   .about-nav-arrow {
     width: 48px;
     height: 48px;
   }
-  
+
   .about-nav-arrow.prev {
     left: 10px;
   }
-  
+
   .about-nav-arrow.next {
     right: 10px;
   }
-  
+
   .about-page-slide {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .about-slideshow-col {
     max-width: 600px;
     margin: 0 auto;
@@ -547,34 +550,35 @@
     gap: 1.2rem;
     margin-bottom: 3rem;
   }
-  
+
   .about-title-slider {
     font-size: 2.5rem;
   }
-  
+
   .about-dropdown-container {
     width: 100%;
   }
-  
+
   .about-dropdown-btn {
     width: 100%;
   }
-  
+
   .about-slide-title {
     font-size: 2.2rem;
     margin-bottom: 2rem;
   }
-  
+
   .detail-card {
     padding-left: 1.2rem;
   }
-  
+
   .detail-card-title {
     font-size: 1.15rem;
   }
-  
+
   .about-nav-arrow {
-    display: none; /* Hide side arrows on small screens in favor of dropdown swipe */
+    display: none;
+    /* Hide side arrows on small screens in favor of dropdown swipe */
   }
 }
 
@@ -584,11 +588,11 @@
     transform: none;
     animation: none;
   }
-  
+
   .about-slides-track {
     transition: none;
   }
-  
+
   .slideshow-img.active {
     animation: none;
   }

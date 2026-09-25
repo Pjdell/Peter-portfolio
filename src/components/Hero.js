@@ -9,6 +9,7 @@ function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
+  /*
   useEffect(() => {
     let timer;
     const activeWord = words[currentWordIndex];
@@ -38,7 +39,7 @@ function Hero() {
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentWordIndex, typingSpeed]);
 
-
+*/
   return (
     <section className="hero">
       {/* Decorative Grid Dots Background */}
@@ -87,12 +88,14 @@ function Hero() {
         <p className="hero-subtitle">Hello, I'm Peter Joshua E. Deloria</p>
 
         <h1 className="hero-typing-title">
-          I'm a <span className="typewriter-text">{currentText}</span>
-          <span className="typewriter-cursor">|</span>
+          <span className="typewriter-text">I TURN <span className="typewriter-text-highlight">PROBLEMS</span> INTO WORKING  <span className="typewriter-text-highlight">SOFTWARE.</span></span>
+
         </h1>
 
         <p className="hero-description">
-          A passionate web developer with experience in building clean, responsive, and community-focused web applications using React, PHP, and modern frontend tools.
+          I turn problems into practical solutions through clean, responsive web applications built with React, PHP, and modern web technologies.
+
+
         </p>
 
         <div className="hero-buttons">
