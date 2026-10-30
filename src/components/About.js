@@ -11,12 +11,12 @@ const ABOUT_PAGES = [
         title: 'Trinity University of Asia',
         subtitle: 'Bachelor of Science in Information Technology',
         meta: 'Major in Software Engineering | 2022 - 2026',
-        description: 'Completed a Software Engineering-focused program with hands-on experience in web application development, databases, cloud technologies, and software development practices. Built web applications using React, PHP, PostgreSQL, Firebase, and other modern technologies through academic and capstone projects.'
+        description: 'Completed a Software Engineering-focused program with hands-on experience in web application development, databases, cloud technologies, and software testing practices. Built web applications using React, PHP, PostgreSQL, Firebase, and other modern technologies through academic and capstone projects. Participated in Software Testing (STLC, UAT, Regression, Functional, API Testing)'
       },
       {
         title: 'Academic Focus & Achievements',
         meta: 'Magna Cum Laude | Dean\'s Lister · Pasig City Scholar',
-        description: 'Excelled in full-stack project development. Developed a robust Software Engineering capstone, and established a strong foundation in modern frontend/backend practices.'
+        description: 'Excelled in full-stack project development. Gained hands on experience in ensuring quality projects by applying Software Testing practices to ensure high-quality, reliable, and user-friendly applications.'
       }
     ],
     images: [
@@ -34,15 +34,15 @@ const ABOUT_PAGES = [
     details: [
       {
         title: 'International Academy Manila',
-        subtitle: 'Full Stack Developer Intern',
+        subtitle: 'Full Stack Developer & QA Intern',
         meta: '2026',
-        description: 'Collaborated with team developers to build, test, and deploy responsive user interfaces. Gained professional exposure to software lifecycles and modern workflow pipelines.'
+        description: 'Collaborated with team developers to build, test, and deploy responsive user interfaces. Gained professional exposure to software lifecycles and software testing methods.'
       },
       {
         title: 'Full-Stack Developer',
         subtitle: 'Academic & Personal Projects',
         meta: '2024 - Present',
-        description: 'Successfully engineered fully-featured web  applications using React, relational databases, and RESTful APIs.'
+        description: 'Successfully engineered fully-featured web  applications using React, relational databases, and RESTful APIs. Tested own works to ensure system usability'
       }
     ],
     images: [
