@@ -5,18 +5,18 @@ const ABOUT_PAGES = [
   {
     id: 'education',
     title: 'Education',
-
+    subtitle: 'ACADEMIC BACKGROUND',
     details: [
       {
         title: 'Trinity University of Asia',
         subtitle: 'Bachelor of Science in Information Technology',
         meta: 'Major in Software Engineering | 2022 - 2026',
-        description: 'Completed a Software Engineering-focused program with hands-on experience in web application development, databases, cloud technologies, and software testing practices. Built web applications using React, PHP, PostgreSQL, Firebase, and other modern technologies through academic and capstone projects. Participated in Software Testing (STLC, UAT, Regression, Functional, API Testing)'
+        description: 'Completed a Software Engineering-focused program with rigorous practical grounding in software quality assurance (STLC, test case design, defect tracking, Postman API testing) and full-stack development. Built and validated web applications with React, PHP, PostgreSQL, and Firebase across academic and capstone systems.'
       },
       {
         title: 'Academic Focus & Achievements',
         meta: 'Magna Cum Laude | Dean\'s Lister · Pasig City Scholar',
-        description: 'Excelled in full-stack project development. Gained hands on experience in ensuring quality projects by applying Software Testing practices to ensure high-quality, reliable, and user-friendly applications.'
+        description: 'Graduated with Magna Cum Laude honors. Applied Software Testing Life Cycle (STLC) practices, functional validation, negative test scenarios, and UAT across projects to deliver high-quality, dependable software.'
       }
     ],
     images: [
@@ -30,19 +30,19 @@ const ABOUT_PAGES = [
   {
     id: 'experience',
     title: 'Work Experience',
-
+    subtitle: 'PROFESSIONAL EXPERIENCE',
     details: [
       {
         title: 'International Academy Manila',
-        subtitle: 'Full Stack Developer & QA Intern',
-        meta: '2026',
-        description: 'Collaborated with team developers to build, test, and deploy responsive user interfaces. Gained professional exposure to software lifecycles and software testing methods.'
+        subtitle: 'QA Intern',
+        meta: 'February 2026 – April 2026',
+        description: 'Tested a centralized school portal (React.js, PHP/PostgreSQL) serving students, faculty, and administrators. Performed manual functional and negative testing, validating expected results, form validations, boundary inputs, and role permissions. Executed unit and system integration testing (SIT), logged defects, and verified fixes through retesting in an Agile team.'
       },
       {
-        title: 'Full-Stack Developer',
+        title: 'Full-Stack Developer & QA Tester',
         subtitle: 'Academic & Personal Projects',
         meta: '2024 - Present',
-        description: 'Successfully engineered fully-featured web  applications using React, relational databases, and RESTful APIs. Tested own works to ensure system usability'
+        description: 'Engineered and quality-tested responsive, data-driven web applications using React, Laravel/PHP, and PostgreSQL. Created 72 manual test cases for the TUA Marketplace capstone project and conducted exploratory testing on the Workforce Allocation Optimizer.'
       }
     ],
     images: [
@@ -54,32 +54,32 @@ const ABOUT_PAGES = [
   {
     id: 'events',
     title: 'Events & Certifications',
-
+    subtitle: 'CREDENTIALS & WORKSHOPS',
     details: [
       {
-        title: 'EgovPH Hackathon 2026',
-        subtitle: 'Workshop Participant & Competitor',
-        meta: '2026',
-        description: 'Participated in workshops and a collaborative hackathon focused on developing innovative technology solutions for government and public service.'
+        title: 'Introduction to Software Testing',
+        subtitle: 'Online Certification',
+        meta: 'Software Testing Principles, Levels & Techniques',
+        description: 'Completed certification covering fundamental software testing principles, test levels (Unit, SIT, System, UAT), testing tools, and testing techniques (functional, negative, regression, boundary value analysis). Deep working knowledge of SDLC, STLC, and defect life cycle.'
       },
       {
-        title: 'Certifications & Technical Achievements',
-        subtitle: 'Certified Front-End Developer & SQL Practitioner',
-        meta: 'Front-End Development & SQL',
-        description: 'Completed the Introduction to Front End Development certification from Simplilearn and successfully passed the SQL public test, demonstrating foundational skills in front-end web development and database querying.'
+        title: 'EgovPH Hackathon & Technical Certifications',
+        subtitle: 'Hackathon Competitor & SQL / Frontend Certified',
+        meta: 'EgovPH 2026 · Simplilearn · SQL Assessment',
+        description: 'Participated in workshops and collaborative hackathons for public sector solutions. Certified in Front-End Web Development (Simplilearn) and passed public SQL database assessment.'
       }
     ],
     images: [
       'event1.jpg',
       'event2.jpg',
       'event3.jpg',
-      'cert1.jpg',
+      'cert.jpg',
       'cert2.jpg'
     ]
   }
 ];
 
-function About() {
+function About({ onOpenResume }) {
   const aboutRef = useRef(null);
   const dropdownRef = useRef(null);
 
@@ -248,11 +248,14 @@ function About() {
 
                       <div className="about-details-list">
                         {page.details.map((detail, dIdx) => (
-                          <div key={dIdx} className="detail-card">
-                            <h4 className="detail-card-title">{detail.title}</h4>
-                            {detail.subtitle && <h5 className="detail-card-subtitle">{detail.subtitle}</h5>}
-                            {detail.meta && <span className="detail-card-meta">{detail.meta}</span>}
-                            <p className="detail-card-desc">{detail.description}</p>
+                          <div key={dIdx} className="detail-bullet-item">
+                            <span className="detail-bullet">—</span>
+                            <div className="detail-content">
+                              <h4 className="detail-card-title">{detail.title}</h4>
+                              {detail.subtitle && <h5 className="detail-card-subtitle">{detail.subtitle}</h5>}
+                              {detail.meta && <span className="detail-card-meta">{detail.meta}</span>}
+                              <p className="detail-card-desc">{detail.description}</p>
+                            </div>
                           </div>
                         ))}
                       </div>

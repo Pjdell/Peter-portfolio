@@ -1,68 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/Hero.css';
 
-const words = ["Web Developer", "Full-Stack Developer", "technology enthusiast"];
-
-function Hero() {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-
-  /*
-  useEffect(() => {
-    let timer;
-    const activeWord = words[currentWordIndex];
-
-    if (isDeleting) {
-      timer = setTimeout(() => {
-        setCurrentText(activeWord.substring(0, currentText.length - 1));
-        setTypingSpeed(60); // Faster delete speed
-      }, typingSpeed);
-    } else {
-      timer = setTimeout(() => {
-        setCurrentText(activeWord.substring(0, currentText.length + 1));
-        setTypingSpeed(120); // Normal typing speed
-      }, typingSpeed);
-    }
-
-    if (!isDeleting && currentText === activeWord) {
-      // Pause at typed word
-      timer = setTimeout(() => {
-        setIsDeleting(true);
-      }, 1550);
-    } else if (isDeleting && currentText === "") {
-      setIsDeleting(false);
-      setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }
-
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentWordIndex, typingSpeed]);
-
-*/
+function Hero({ onOpenResume }) {
   return (
-    <section className="hero">
-      {/* Decorative Grid Dots Background */}
-      <div className="hero-dots-container">
-        <svg width="120" height="200" viewBox="0 0 120 200" fill="none">
-          <circle cx="20" cy="20" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="60" cy="20" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="100" cy="20" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="20" cy="60" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="60" cy="60" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="100" cy="60" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="20" cy="100" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="60" cy="100" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="100" cy="100" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="20" cy="140" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="60" cy="140" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="100" cy="140" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="20" cy="180" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="60" cy="180" r="4" fill="rgba(0, 132, 209, 0.4)" />
-          <circle cx="100" cy="180" r="4" fill="rgba(0, 132, 209, 0.4)" />
-        </svg>
-      </div>
-
+    <section id="home" className="hero">
       {/* LEFT CONTENT AREA */}
       <div className="hero-left">
         {/* Social media icons at the top of content */}
@@ -85,17 +26,19 @@ function Hero() {
           </a>
         </div>
 
+        {/* ROLE BADGE */}
+
+
         <p className="hero-subtitle">Hello, I'm Peter Joshua E. Deloria</p>
 
         <h1 className="hero-typing-title">
-          <span className="typewriter-text">I TURN <span className="typewriter-text-highlight">PROBLEMS</span> INTO WORKING  <span className="typewriter-text-highlight">SOFTWARE.</span></span>
-
+          <span className="typewriter-text">
+            I TURN <span className="typewriter-text-highlight">PROBLEMS</span> INTO TESTED, WORKING <span className="typewriter-text-highlight">SOFTWARE.</span>
+          </span>
         </h1>
 
         <p className="hero-description">
-          I turn problems into practical solutions through clean, responsive web applications built with React, PHP, and modern web technologies.
-
-
+          Entry-level QA Engineer and BS IT graduate with hands-on experience in manual functional, negative, regression, system, exploratory, and UAT testing. My full-stack foundation (React, PHP, PostgreSQL) powers deep system understanding, effective test case design, and seamless developer collaboration.
         </p>
 
         <div className="hero-buttons">

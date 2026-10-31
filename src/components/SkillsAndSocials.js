@@ -1,27 +1,56 @@
 import React from 'react';
 import '../styles/SkillsAndSocials.css';
 
-function SkillsAndSocials() {
+function SkillsAndSocials({ onOpenResume }) {
   const toolboxCategories = [
     {
       num: "1",
-      name: "FRONTEND",
-      skills: ["React", "JavaScript", "HTML", "CSS", "Tailwind"]
+      name: "TESTING & QA",
+      skills: [
+        "Manual Functional Testing",
+        "Negative & Boundary Testing",
+        "Regression & Smoke Testing",
+        "System & Integration (SIT)",
+        "UAT & Exploratory Testing",
+        "Test Case Design & Execution",
+        "Defect Reporting & Retesting",
+        "Postman (API Testing)",
+        "SDLC / STLC & Agile"
+      ]
     },
     {
       num: "2",
-      name: "BACKEND",
-      skills: ["PHP", "Laravel", "REST APIs"]
+      name: "DEVELOPMENT",
+      skills: [
+        "React.js",
+        "JavaScript (ES6+)",
+        "PHP & Laravel",
+        "HTML5 & CSS3",
+        "Tailwind CSS",
+        "RESTful APIs"
+      ]
     },
     {
       num: "3",
-      name: "DATA",
-      skills: ["PostgreSQL", "MySQL", "Firebase"]
+      name: "DATABASES",
+      skills: [
+        "PostgreSQL",
+        "MySQL",
+        "Firebase Realtime DB",
+        "Database Workflows",
+        "Relational Schema Design"
+      ]
     },
     {
       num: "4",
-      name: "TOOLS",
-      skills: ["Git", "GitHub", "Figma", "WordPress"]
+      name: "TOOLS & DOCS",
+      skills: [
+        "Postman",
+        "Git & GitHub",
+        "VS Code",
+        "MS Excel & Word (Test Docs)",
+        "Figma"
+      ]
     }
   ];
 
@@ -29,7 +58,7 @@ function SkillsAndSocials() {
     {
       name: "GitHub",
       handle: "@Pjdell",
-      label: "Code & Open Source",
+      label: "Code & QA Repositories",
       url: "https://github.com/Pjdell",
       icon: (
         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -70,24 +99,23 @@ function SkillsAndSocials() {
         <div className="toolbox-division">
           <div className="toolbox-header">
             <div className="toolbox-header-left">
-
+              <span className="toolbox-eyebrow">COMPETENCIES & STACK</span>
               <h2 className="toolbox-title">TOOLBOX</h2>
             </div>
 
-            {/* MONOSPACE STATUS LABEL */}
+            {/* MONOSPACE STATUS STRIP */}
             <div className="toolbox-status-strip">
-
               <div className="status-content">
-                <span className="status-label">CURRENTLY USING</span>
-                <span className="status-stack">React · PHP · PostgreSQL</span>
+                <span className="status-label">TESTING & USING:</span>
+                <span className="status-stack">Manual QA · Postman · React · PHP · PostgreSQL</span>
               </div>
             </div>
           </div>
 
           {/* EDITORIAL TYPOGRAPHIC GRID */}
           <div className="toolbox-grid">
-            {toolboxCategories.map((cat) => (
-              <div key={cat.num} className="toolbox-col">
+            {toolboxCategories.map((cat, idx) => (
+              <div key={cat.num} className={`toolbox-col ${idx === 0 ? 'featured-col' : ''}`}>
                 <div className="toolbox-col-header">
                   <span className="toolbox-num">{cat.num}</span>
                   <h3 className="toolbox-category">{cat.name}</h3>
@@ -105,10 +133,60 @@ function SkillsAndSocials() {
           </div>
         </div>
 
-        {/* CONNECT & RESUME DIVISION */}
+        {/* QA RESUME HIGHLIGHT BANNER */}
+        <div id="resume" className="resume-highlight-card">
+          <div className="resume-highlight-left">
+            <div className="resume-highlight-eyebrow">
+
+              <span>FEATURED QA RESUME HIGHLIGHT</span>
+            </div>
+            <h3 className="resume-highlight-title">Entry-Level QA Engineer & BS IT Graduate</h3>
+            <p className="resume-highlight-desc">
+              Hands-on experience in manual functional, negative, regression, system, exploratory, and UAT testing across three web applications. Experienced in test case design (72+ test cases documented), defect reporting, retesting in Agile teams, and Postman API testing — backed by full-stack React, PHP, and PostgreSQL skills.
+            </p>
+            <div className="resume-highlight-tags">
+              <span className="resume-highlight-tag">72 Manual Test Cases</span>
+              <span className="resume-highlight-tag">QA Intern (IAM Portal)</span>
+              <span className="resume-highlight-tag">Postman API Testing</span>
+              <span className="resume-highlight-tag">STLC & Agile</span>
+              <span className="resume-highlight-tag">Magna Cum Laude</span>
+            </div>
+          </div>
+
+          <div className="resume-highlight-right">
+            <button
+              type="button"
+              onClick={onOpenResume}
+              className="resume-card-btn-primary"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              <span>View Full QA Resume</span>
+            </button>
+
+            <a
+              href={`${process.env.PUBLIC_URL}/DeloriaQA_Resume.pdf`}
+              download="Peter_Joshua_Deloria_QA_Resume.pdf"
+              className="resume-card-btn-secondary"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download PDF</span>
+            </a>
+          </div>
+        </div>
+
+        {/* CONNECT DIVISION */}
         <div className="connect-division">
           <div className="connect-header">
-
             <h2 className="connect-title">LET'S CONNECT</h2>
           </div>
 
@@ -135,6 +213,7 @@ function SkillsAndSocials() {
               </a>
             ))}
           </div>
+
 
 
         </div>

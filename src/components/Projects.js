@@ -96,58 +96,24 @@ function ImageSlideshow({ images, alt, variant = 'card', onImageClick }) {
 }
 
 /* ─── Projects Section ─── */
-function Projects() {
+function Projects({ onOpenResume }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const asset = (path) => `${process.env.PUBLIC_URL}${path}`;
 
   const projects = [
     {
-
-      client: "INTERNATIONAL ACADEMY MANILA",
-      title: "School Management Portal",
-      subtitle: "A school portal connecting students, faculty, and administrators.",
-      description: "Built during my internship to support multiple school workflows including enrollment, grades, announcements, document requests, and administrative operations. I worked with team developers to build, test, and deploy responsive interfaces across the system.",
-      role: "Full-Stack Developer Intern",
-      stack: ["React", "PHP", "PostgreSQL", "Git"],
-      focus: ["RBAC", "Responsive UI", "Database workflows"],
-      problem: "A school environment requires different users — students, faculty, finance, and admins — to access different academic and administrative workflows through a single portal.",
-      approach: "We built role-based access across student, faculty, finance, academic, and administrative workflows, with each role seeing only what they need.",
-      learned: "Designing permissions early made the application easier to extend as more roles and features were added.",
-      images: [
-        asset('/iamport1.jpg'),
-        asset('/iamport2.jpg'),
-        asset('/iamport3.jpg'),
-      ],
-    },
-    {
-
-      client: "PERSONAL PROJECT",
-      title: "Workforce Allocation Optimizer",
-      subtitle: "A tool for matching employees with projects based on skills, availability, workload, and project requirements.",
-      description: "The idea came from a simple problem: assigning people to projects becomes difficult when skills, availability, workload, and project requirements all need to be considered at once. I built a system that helps automate this process and provides allocation recommendations.",
-      role: "Full-Stack Developer",
-      stack: ["React", "PHP/Laravel", "PostgreSQL"],
-      focus: ["Allocation optimization", "Employee-Project matching", "Workload balancing"],
-      problem: "Manually assigning employees to projects can be time-consuming and inconsistent when multiple factors such as skills, availability, workload, and project requirements need to be balanced simultaneously.",
-      approach: "I built a PHP-based allocation engine that evaluates employee skills, availability, current workload, and project requirements to score and recommend suitable assignments while identifying potential workload conflicts and unfilled requirements.",
-      learned: "Breaking the allocation problem into smaller scoring rules and constraints made the system easier to understand, test, and debug while keeping the recommendations transparent.",
-      images: [
-        asset('/workopt.jpg'),
-      ],
-    },
-    {
-
-      title: "TUA Marketplace",
-      client: "CAPSTONE PROJECT",
-      subtitle: "A campus marketplace designed around a search problem and security",
-      description: "I noticed that general marketplace searches don't always return the item a user actually has in mind. So our team explored a more focused campus marketplace experience with AI-based recommendations and real-time buyer-seller messaging.",
-      role: "Frontend Developer",
-      stack: ["React", "PHP", "MySQL"],
-      focus: ["Browse UX", "AI recommendations", "Real-time messaging"],
-      problem: "Students buying and selling within campus had no dedicated platform — general marketplaces are too broad and don't serve a campus community well. Also, social media marketplace is not 100% secure for users. ",
-      approach: "We built a focused marketplace with AI-based product recommendations and  real-time buyer-seller messaging to keep transactions within the campus.",
-      learned: "Working in a team taught me how to divide frontend responsibilities clearly and merge work without breaking each other's code.",
+      num: "01",
+      client: "CAPSTONE PROJECT · QA HIGHLIGHT",
+      title: "Trinity University of Asia Marketplace",
+      subtitle: "A campus marketplace built with React & Firebase that served as the System Under Test for a 72-test-case QA cycle.",
+      description: "Engineered a student & vendor marketplace with real-time chat and Firebase authentication. Beyond frontend development, the platform was designated as the System Under Test for a full Quality Assurance cycle. Created and documented 72 manual test cases covering system, functional, negative, regression, and UAT testing, reporting defects and retesting after fixes.",
+      role: "Frontend Developer & QA Tester",
+      stack: ["React.js", "Firebase Auth & Realtime DB", "Postman", "Agile / Scrum"],
+      focus: ["72 Manual Test Cases", "System & Functional QA", "Regression & UAT", "Defect Retesting"],
+      problem: "Campus peer-to-peer commerce requires high trust and resilience — invalid auth states, unhandled database drops, or messaging desyncs could directly compromise student transactions.",
+      approach: "Authored 72 structured manual test cases covering happy and negative paths. Executed exploratory, negative, regression, and UAT testing; logged bug reports with reproducible steps and expected vs. actual outcomes, then verified fixes across Agile sprint cycles.",
+      learned: "Rigorous test documentation and regression testing ensure rapid iterations don't break established features, making QA central to reliable software delivery.",
       images: [
         asset('/tua.jpg'),
         asset('/tuamar2.jpg'),
@@ -155,17 +121,51 @@ function Projects() {
       ],
     },
     {
-
+      num: "02",
+      client: "INTERNATIONAL ACADEMY MANILA",
+      title: "School Management Portal",
+      subtitle: "A centralized multi-role portal connecting students, faculty, and administrators across academic workflows.",
+      description: "Tested and contributed to a centralized school portal built with React.js, PHP, and PostgreSQL. Validated multi-role academic and administrative workflows including enrollment, grading, documentation requests, and permissions.",
+      role: "QA Intern · Full-Stack Intern",
+      stack: ["React.js", "PHP", "PostgreSQL", "Git", "Postman"],
+      focus: ["Functional & Negative QA", "Unit & SIT Testing", "Multi-Role RBAC", "Bug Verification"],
+      problem: "A centralized school system has distinct roles (students, faculty, administrators). Inconsistent input validation or cross-role permission flaws could lead to unauthorized data access or corrupted student records.",
+      approach: "Conducted manual functional and negative testing on all core forms and modules. Ran unit and system integration testing (SIT) to ensure frontend components, PHP backend APIs, and PostgreSQL database worked in lockstep; reported defects and retested after developer fixes.",
+      learned: "Negative testing and clear, actionable bug logging accelerate developer turnaround times and protect critical role-based data workflows.",
+      images: [
+        asset('/iamport1.jpg'),
+        asset('/iamport2.jpg'),
+        asset('/iamport3.jpg'),
+      ],
+    },
+    {
+      num: "03",
+      client: "PERSONAL PROJECT",
+      title: "Workforce Allocation Optimizer",
+      subtitle: "A resource optimization system matching employees with projects based on skills, availability, and workloads.",
+      description: "Built a full-stack allocation engine with React.js, Tailwind CSS, Laravel/PHP, and PostgreSQL. Designed specifically to practice end-to-end QA on a complex multi-module application with algorithmic scoring logic.",
+      role: "Full-Stack Developer & QA Tester",
+      stack: ["React.js", "Tailwind CSS", "Laravel / PHP", "PostgreSQL"],
+      focus: ["Exploratory Testing", "Allocation Logic Verification", "Boundary Value Testing", "Workload Balancing"],
+      problem: "Balancing skills, overlapping timelines, availability, and workload capacity can easily introduce algorithmic edge cases, over-allocations, and silent constraint violations.",
+      approach: "Engineered a PHP scoring engine and executed modular exploratory testing across all parameters. Tested edge cases, invalid availability inputs, and boundary values to verify optimization accuracy, retesting after code revisions.",
+      learned: "Structuring complex logic into verifiable constraints makes designing boundary test cases easier and ensures predictable, auditable allocation suggestions.",
+      images: [
+        asset('/workopt.jpg'),
+      ],
+    },
+    {
+      num: "04",
       client: "PERSONAL PROJECT",
       title: "Pasig Garbage Tracking System",
-      subtitle: "A real-time tracking system for waste collection in Pasig City.",
-      description: "Residents in Pasig often didn't know when garbage trucks would pass their area. I built a tracking system that shows real-time truck locations on a map, so communities can plan around actual collection times.",
+      subtitle: "A real-time tracking system for municipal waste collection in Pasig City.",
+      description: "Built a community tracking system integrating Leaflet maps with real-time location data to display waste collection routes and progress, helping residents stay informed.",
       role: "Full-Stack Developer",
       stack: ["React", "Leaflet", "PHP", "MySQL"],
-      focus: ["Real-time tracking", "Map integration", "Community UX"],
-      problem: "Residents had no way to know when garbage trucks would reach their area, leading to missed collections and street clutter.",
-      approach: "I integrated Leaflet maps with real-time GPS data to show truck positions, letting residents track collection progress in their barangay.",
-      learned: "Working with real-time map data taught me how to handle frequent state updates without killing browser performance.",
+      focus: ["Real-time Tracking", "Map Integration", "Community UX", "System Usability"],
+      problem: "Residents had no visibility on garbage collection schedules, leading to missed collections and street waste build-up.",
+      approach: "Integrated Leaflet maps with dynamic vehicle status updates, testing responsive map behaviors and route accuracy for barangay-level tracking.",
+      learned: "Handling frequent real-time state updates without sacrificing UI rendering performance.",
       images: [
         asset('/garbage1.jpg'),
         asset('/garbage2.jpg'),
@@ -175,18 +175,18 @@ function Projects() {
   ];
 
   const processSteps = [
-    { num: "1", title: "UNDERSTAND", desc: "What problem are we actually solving?" },
-    { num: "2", title: "DESIGN", desc: "Turn requirements into a usable interface." },
-    { num: "3", title: "BUILD", desc: "React frontend + backend + database." },
-    { num: "4", title: "TEST", desc: "Use the application and find what breaks." },
-    { num: "5", title: "REFINE", desc: "Debug, improve, and review the implementation." },
+    { num: "1", title: "UNDERSTAND", desc: "Analyze business requirements, user stories, and acceptance criteria." },
+    { num: "2", title: "DESIGN & PLAN", desc: "Design intuitive interfaces and map out structured test case scenarios." },
+    { num: "3", title: "BUILD", desc: "Engineer robust React frontends, backend APIs, and database schemas." },
+    { num: "4", title: "TEST & QA", desc: "Execute manual functional, negative, boundary, SIT, and regression tests." },
+    { num: "5", title: "REFINE & RETEST", desc: "Log defects, verify fixes through retesting, and validate UAT readiness." },
   ];
 
   const currentlyItems = [
-    { label: "Looking for", value: "Junior Full-Stack / Web Developer opportunities" },
-    { label: "Learning", value: "Laravel · deeper PHP backend development" },
-    { label: "Building", value: "Workforce Allocation Optimizer" },
-    { label: "Interested in", value: "Backend systems · databases · practical web applications" },
+    { label: "Looking for", value: "Entry-Level QA Engineer / Software Tester / Full-Stack opportunities" },
+    { label: "Learning", value: "Test Automation (Selenium) · Postman API automated testing" },
+    { label: "Testing & Building", value: "Workforce Allocation Optimizer & QA Test Suites" },
+    { label: "Interested in", value: "Software Quality Assurance · STLC · Defect Life Cycle · Web Systems" },
   ];
 
   return (
@@ -194,7 +194,6 @@ function Projects() {
 
       {/* ─── SECTION HEADER ─── */}
       <div className="projects-header">
-
         <h2 className="projects-title">SELECTED WORK</h2>
       </div>
 
@@ -207,11 +206,9 @@ function Projects() {
             <div className="case-text">
               <div className="case-header">
                 <span className="case-num">{project.num}</span>
-
               </div>
               <div className="case-title-row">
                 <h3 className="case-title">{project.title}</h3>
-
               </div>
               <p className="case-subtitle">{project.subtitle}</p>
               <p className="case-description">{project.description}</p>
@@ -243,7 +240,7 @@ function Projects() {
                   <p className="case-study-text">{project.problem}</p>
                 </div>
                 <div className="case-study-item">
-                  <span className="case-study-label">MY APPROACH</span>
+                  <span className="case-study-label">MY APPROACH & QA METHOD</span>
                   <p className="case-study-text">{project.approach}</p>
                 </div>
                 <div className="case-study-item">
@@ -267,12 +264,12 @@ function Projects() {
         ))}
       </div>
 
-      {/* ─── HOW I BUILD ─── */}
+      {/* ─── HOW I BUILD & TEST ─── */}
       <div className="process-section">
         <div className="process-header">
-          <h2 className="process-title">HOW I BUILD</h2>
+          <h2 className="process-title">HOW I BUILD & TEST</h2>
           <p className="process-note">
-            I use AI tools as development assistants when appropriate, but I review the generated code, test the application, and make sure I understand the implementation before accepting it.
+            I combine full-stack development with rigorous Quality Assurance practices — reviewing code, designing negative test cases, finding edge cases, and verifying fixes to ensure delivered software is dependable and production-ready.
           </p>
         </div>
 
@@ -297,7 +294,6 @@ function Projects() {
       {/* ─── CURRENTLY ─── */}
       <div className="currently-section">
         <div className="currently-header">
-
           <h2 className="currently-title">CURRENTLY</h2>
         </div>
 

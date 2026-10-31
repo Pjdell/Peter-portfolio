@@ -1,41 +1,74 @@
-
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #1e293b;
+    background: #0a1626;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 18px 10%;
     color: white;
     z-index: 1000;
-        backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(15, 31, 45, 0.676);
-    border-radius: 12px;
-    border: 1px solid rgba(1, 12, 28, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     font-family: var(--font-title, 'Space Grotesk'), sans-serif;
     letter-spacing: -0.5px;
+    color: #ffffff;
 }
+
+.logo-highlight {
+    color: #D4AF37;
+    margin-left: 4px;
+}
+
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
     font-weight: 500;
+    transition: color 0.2s ease;
 }
+
 .nav-links a:hover {
-    color: #3b82f6;
+    color: #38bdf8;
+}
+
+.nav-resume-btn {
+    background: #0f223a;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #D4AF37;
+    font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.nav-resume-btn:hover {
+    background: #D4AF37;
+    color: #071328;
+    transform: translateY(-1px);
 }
 
 /* HAMBURGER (mobile) */
@@ -47,18 +80,18 @@
     gap: 6px;
     width: 44px;
     height: 44px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f223a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
     cursor: pointer;
-    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
     padding: 0;
     z-index: 1100;
 }
 
 .hamburger:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: #152d4e;
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .hamburger:active {
@@ -100,24 +133,22 @@
 
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 72px;
         right: 6%;
-        background: rgba(15, 31, 45, 0.95);
-        backdrop-filter: blur(16px) saturate(120%);
-        -webkit-backdrop-filter: blur(16px) saturate(120%);
+        background: #0c1a2d;
         flex-direction: column;
         gap: 6px;
         padding: 16px;
-        border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         display: none;
         min-width: 220px;
     }
 
     .nav-links.open {
         display: flex;
-        animation: slideInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        animation: slideInDown 0.25s ease-out forwards;
     }
 
     .nav-links a {
@@ -131,8 +162,15 @@
 
     .nav-links a:hover,
     .nav-links a:active {
-        background-color: rgba(255, 255, 255, 0.05);
-        color: #3b82f6;
+        background-color: #16273f;
+        color: #38bdf8;
+    }
+
+    .nav-links .nav-resume-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 6px;
+        padding: 10px 16px;
     }
 }
 

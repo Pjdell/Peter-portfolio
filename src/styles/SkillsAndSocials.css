@@ -6,16 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-}
+  }
 
 .section-container {
   max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
   position: relative;
   z-index: 2;
 }
@@ -66,50 +64,15 @@
   text-transform: uppercase;
 }
 
-/* CURRENTLY USING STATUS STRIP (MONOSPACE) */
+/* STATUS STRIP (SOLID CLEAN MONOSPACE) */
 .toolbox-status-strip {
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
   padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: #0c1a2d;
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 6px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.status-indicator {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.status-ping {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: rgba(16, 185, 129, 0.4);
-  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes radarPing {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.9;
-  }
-
-  75%,
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
 }
 
 .status-content {
@@ -140,7 +103,7 @@
 .toolbox-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 2.5rem;
 }
@@ -150,6 +113,10 @@
   flex-direction: column;
 }
 
+.toolbox-col.featured-col {
+  position: relative;
+}
+
 .toolbox-col-header {
   display: flex;
   align-items: baseline;
@@ -157,6 +124,10 @@
   margin-bottom: 1.75rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toolbox-col.featured-col .toolbox-col-header {
+  border-bottom-color: rgba(212, 175, 55, 0.4);
 }
 
 .toolbox-num {
@@ -177,6 +148,10 @@
   text-transform: uppercase;
 }
 
+.toolbox-col.featured-col .toolbox-category {
+  color: #f8fafc;
+}
+
 .toolbox-list {
   list-style: none;
   padding: 0;
@@ -191,7 +166,7 @@
   align-items: center;
   gap: 0.65rem;
   font-family: var(--font-body, 'IBM Plex Sans'), sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: #94a3b8;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
   cursor: default;
@@ -199,7 +174,7 @@
 
 .toolbox-bullet {
   font-family: var(--font-label, 'IBM Plex Mono'), monospace;
-  color: rgba(212, 175, 55, 0.35);
+  color: rgba(212, 175, 55, 0.5);
   font-size: 0.85rem;
   transition: transform 0.25s ease, color 0.25s ease;
 }
@@ -221,6 +196,140 @@
 .toolbox-item:hover .toolbox-name {
   color: #ffffff;
   font-weight: 500;
+}
+
+/* ──────────────────────────────────────────────
+   QA RESUME HIGHLIGHT BANNER (CLEAN SOLID)
+────────────────────────────────────────────── */
+
+.resume-highlight-card {
+  background: #0b182c;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 14px;
+  padding: 34px 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  }
+
+
+
+.resume-highlight-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 680px;
+}
+
+.resume-highlight-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.78rem;
+  color: #D4AF37;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.resume-highlight-title {
+  font-family: var(--font-title, 'Space Grotesk'), sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.resume-highlight-desc {
+  font-family: var(--font-body, 'IBM Plex Sans'), sans-serif;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.resume-highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.resume-highlight-tag {
+  font-family: var(--font-label, 'IBM Plex Mono'), monospace;
+  font-size: 0.76rem;
+  background: #11223b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.resume-highlight-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.resume-card-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #D4AF37;
+  color: #071328;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.resume-card-btn-primary svg {
+  width: 17px;
+  height: 17px;
+}
+
+.resume-card-btn-primary:hover {
+  transform: translateY(-2px);
+  background: #e3be46;
+}
+
+.resume-card-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #11223b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: var(--font-ui, 'IBM Plex Sans'), sans-serif;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.resume-card-btn-secondary svg {
+  width: 16px;
+  height: 16px;
+}
+
+.resume-card-btn-secondary:hover {
+  background: #193256;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ──────────────────────────────────────────────
@@ -270,7 +379,7 @@
 .connect-row:hover {
   padding-left: 1.2rem;
   padding-right: 0.8rem;
-  background: rgba(255, 255, 255, 0.02);
+  background: #0b182c;
   border-bottom-color: rgba(212, 175, 55, 0.4);
 }
 
@@ -368,7 +477,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px 42px;
-  background: linear-gradient(90deg, #D4AF37, #E3B778);
+  background: #D4AF37;
   color: #071328;
   font-weight: 700;
   font-size: 1.05rem;
@@ -376,8 +485,9 @@
   text-decoration: none;
   border-radius: 50px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
   letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-icon {
@@ -387,8 +497,7 @@
 
 .resume-btn:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-  background: linear-gradient(90deg, #E3B778, #D4AF37);
+  background: #e3be46;
 }
 
 /* ──────────────────────────────────────────────
@@ -404,6 +513,24 @@
   .toolbox-title {
     font-size: 2.8rem;
   }
+
+  .resume-highlight-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px 24px;
+  }
+
+  .resume-highlight-right {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .resume-card-btn-primary,
+  .resume-card-btn-secondary {
+    flex: 1;
+    min-width: 180px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -412,7 +539,7 @@
   }
 
   .section-container {
-    gap: 75px;
+    gap: 60px;
   }
 
   .toolbox-header {
@@ -433,6 +560,23 @@
   .toolbox-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .resume-highlight-card {
+    padding: 22px 18px;
+  }
+
+  .resume-highlight-title {
+    font-size: 1.35rem;
+  }
+
+  .resume-highlight-right {
+    flex-direction: column;
+  }
+
+  .resume-card-btn-primary,
+  .resume-card-btn-secondary {
+    width: 100%;
   }
 
   .connect-title {

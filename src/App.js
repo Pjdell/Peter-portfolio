@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -5,23 +6,37 @@ import About from './components/About';
 import Projects from './components/Projects';
 import SkillsAndSocials from './components/SkillsAndSocials';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
 
 function App() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
+  const handleOpenResume = () => {
+    setIsResumeOpen(true);
+  };
+
+  const handleCloseResume = () => {
+    setIsResumeOpen(false);
+  };
+
   return (
-    <div>
+    <div className="app">
+      <Navbar onOpenResume={handleOpenResume} />
 
-      <Navbar />
+      <Hero onOpenResume={handleOpenResume} />
 
-      <Hero />
+      <About onOpenResume={handleOpenResume} />
 
-      <About />
+      <Projects onOpenResume={handleOpenResume} />
 
-      <Projects />
-
-      <SkillsAndSocials />
+      <SkillsAndSocials onOpenResume={handleOpenResume} />
 
       <Footer />
 
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={handleCloseResume}
+      />
     </div>
   );
 }
